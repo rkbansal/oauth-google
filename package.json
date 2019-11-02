@@ -1,21 +1,32 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "server for web and mobile app",
-  "main": "index.js",
+  "name": "social-auth-server",
+  "version": "0.0.1",
+  "description": "Server for React/Node Social auth",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js",
+    "start": "node server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://roshan_khan@bitbucket.org/roshan_khan/server.git"
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "https": "^1.0.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-github": "^1.1.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "path": "^0.12.7",
+    "request": "^2.86.0",
+    "request-promise": "^4.2.2",
+    "socket.io": "^2.1.1"
   },
   "author": "raj",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/roshan_khan/server#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.7.5"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.17.4"
   }
 }

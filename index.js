@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 8080;
 
 const models = require('./schema');
 const UserModel = models.UserModel;
@@ -16,7 +16,7 @@ app.get('/create', async (req, res) => {
   });
   user.save(function(err){
     if (err) res.send(err);
-    console.log(user);
+    // console.log(user);
     res.send(user);
   });
 })
