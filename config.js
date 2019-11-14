@@ -3,7 +3,7 @@ const providers = ['twitter', 'google', 'facebook', 'github']
 const callbacks = providers.map(provider => {
   return process.env.NODE_ENV === 'production'
     ? `https://react-auth-twitter.herokuapp.com/${provider}/callback`
-    : `https://localhost:8080/${provider}/callback`
+    : `https://localhost:8080/auth/${provider}/callback`
 })
 
 const [twitterURL, googleURL, facebookURL, githubURL] = callbacks

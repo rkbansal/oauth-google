@@ -2,15 +2,14 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
-const models = require('./schema');
-const UserModel = models.UserModel;
+const {User} = require('./models');
 
 app.get('/', (req, res) => {
   res.send("Hi");
 });
 
 app.get('/create', async (req, res) => {
-  const user = new UserModel({
+  const user = new User({
     name: 'Raj',
     role: '1'
   });

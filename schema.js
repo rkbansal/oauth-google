@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
-const dbUrl = "mongodb://roshan:roshandb@3.19.28.243:27017/main_db";
+// const dbUrl = "mongodb://roshan:roshandb@3.19.28.243:27017/main_db";
+const dbUrl = "mongodb://127.0.0.1:27017/main_db";
 
 mongoose.connect(dbUrl);
 
+// app.use(session({
+//   store: new MongoStore({ mongooseConnection: mongoose.connection })
+// }));
 // Connected handler
 mongoose.connection.on('connected', function (err) {
   console.log("Connected to DB using chain: " + dbUrl);
@@ -15,25 +19,8 @@ mongoose.connection.on('error', function (err) {
 
 // Reconnect when closed
 mongoose.connection.on('disconnected', function () {
-   self.connectToDatabase();
+  console.log('disconnected to db');
+  //  self.connectToDatabase();
 });
 
-const Schema = mongoose.Schema;
-const UserModelSchema = new Schema({
-  name: String,
-  role: String,
-});
-
-const ConversationModelSchema = new Schema({
-  userA: String,
-  userB: String,
-  conversations: [{owner: String, text: String, status: String}]
-});
-
-const UserModel = mongoose.model('Users', UserModelSchema );
-const Conversations = mongoose.model('Conversations', ConversationModelSchema );
-
-module.exports = {
-  UserModel,
-  Conversations
-}
+module.exports = mongoose.Schema;
